@@ -11,7 +11,8 @@
 
 AWS/클라우드 워치와 엘라스틱 서치/APM의 기록을 보면 크게 3개 로그로 정리할 수 있습니다.
 
-1. could not initialize proxy [dcode.model.persistence.entity.content.ContentBox#1106] - no Session \ dcode.model.persistence.entity.content.ContentBox_$$*jvst84c_7.getBoxData(ContentBox*$$_jvst84c_7.java)
+1. could not initialize proxy [dcode.model.persistence.entity.content.ContentBox#1106] - no Session \
+dcode.model.persistence.entity.content.ContentBox_$$*jvst84c_7.getBoxData(ContentBox*$$_jvst84c_7.java)
 2. Unable to acquire JDBC Connection; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
 3. WARN ObjectGraphWalker - The configured limit of 100,000 object references was reached
 while attempting to calculate the size of the object graph. 
