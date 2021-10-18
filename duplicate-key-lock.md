@@ -1,6 +1,6 @@
 # 1. 사용자 로그인
 
-[POST] [https://dev-msa-oauth.letsdcode.com/oauth/token](https://dev-msa-oauth.letsdcode.com/oauth/token)
+[POST] [https://dev-msa-oauth.***.com/oauth/token](https://dev-msa-oauth.***.com/oauth/token)
 
 ```jsx
 client_id:clientapp
@@ -29,7 +29,7 @@ password:qwer1234
 
 ## 2-1.  재고 소진 API
 
-[GET] [https://dev-api-orders.letsdcode.com/orders/payment/choice](https://dev-api-orders.letsdcode.com/orders/payment/choice)
+[GET] [https://dev-api-orders.***.com/orders/payment/choice](https://dev-api-orders.***.com/orders/payment/choice)
 
 ```jsx
 storeId:itsdcode
@@ -51,13 +51,13 @@ timestamp 와 customData 는 테스트 당일 셋팅되어야함.
 
 ## 2-2. 가상의 결제모듈 API
 
-[GET] [https://dev-api-orders.letsdcode.com](https://dev-api-orders.letsdcode.com/orders/payment/choice)/orders/payment/kcp/payResultTest/{paymentOrderId}
+[GET] [https://dev-api-orders.***.com](https://dev-api-orders.***.com/orders/payment/choice)/orders/payment/kcp/payResultTest/{paymentOrderId}
 
 KCP 결제창을 띄어 사람들이 결제를 시도했다고 가정하고 진행. paymentOrderId 는 위에 생성된 랜덤ID 값으로   호출 됨.
 
 ## 2-3. 재고 복구 API
 
-[DELETE] [https://dev-api-orders.letsdcode.com](https://dev-api-orders.letsdcode.com/orders/payment/choice)/orders/payment/cancel/{paymentOrderId}
+[DELETE] [https://dev-api-orders.***.com](https://dev-api-orders.***.com/orders/payment/choice)/orders/payment/cancel/{paymentOrderId}
 
 KCP 결제창을 띄웠다가 취소하는 경우 위 API를 통해서 미리 할당한 재고를 복구함.
 
@@ -71,7 +71,8 @@ KCP 결제창을 띄웠다가 취소하는 경우 위 API를 통해서 미리 �
 
 데이터 확인 후 문제가 없다면 순간 1000건 이상의 요청콜로 2차 테스트 진행.
 
-# 3-2. 2차 부하 테스트 (본 테스트부터 직접 시나리오 작성 및 실행, Given-When-Then 콘셉트 적용)
+# 3-2. 2차 부하 테스트  
+# (본 테스트부터 직접 시나리오 작성 및 실행, Given-When-Then 콘셉트 적용)
 
 - 2차 테스트는 현실적인 트래픽 양과 SELECT, INSERT, UPDATE I/O가 섞인 환경을 테스트하고자 합니다
 
@@ -123,13 +124,13 @@ KCP 결제창을 띄웠다가 취소하는 경우 위 API를 통해서 미리 �
 
 ### 2021-06-23
 
-[2021-06-23 결제 부하 테스트](https://www.notion.so/2021-06-23-96e44b05f1aa4a4db251fc5f3079a8e3)
+[2021-06-23 결제 부하 테스트](사내 노션 문서)
 
 ### 2021-06-24
 
-[2021-06-24 결제 부하 테스트](https://www.notion.so/2021-06-24-4f13b4fc862e444eb9442b5c00470410)
+[2021-06-24 결제 부하 테스트](사내 노션 문서)
 
-[2021-06-24 결제 부하 테스트 (order-list 1대)](https://www.notion.so/2021-06-24-order-list-1-3fd59e6872bc47b391485edbf8c7ddf7)
+[2021-06-24 결제 부하 테스트 (order-list 1대)](사내 노션 문서)
 
 # 5. 테스트 결과 정리
 
