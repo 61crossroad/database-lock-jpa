@@ -6,8 +6,8 @@
 client_id:clientapp
 client_secret:secret
 grant_type:password
-username:chuck@itsdcode.com
-password:qwer1234
+username:****@itsdcode.com
+password:********
 ```
 
 로그인 할 때 token 정보가 생성됨
