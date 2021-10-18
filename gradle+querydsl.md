@@ -67,7 +67,8 @@ annotationProcessor('com.querydsl:querydsl-apt:4.4.0:jpa')
 - 저는 개인적으로 Q 클래스를 빌드된 클래스들과 놓는걸 선호합니다.
 - .gitignore에 굳이 src/main/generated를 추가할 필요가 없고, Q 클래스는 엄밀히 말하면 소스에 해당하지는 않다고 생각해서요.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8fe8c46e-9012-4f7c-997e-62cfc147c602/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8fe8c46e-9012-4f7c-997e-62cfc147c602/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/3108214/137776465-7d7fd199-f045-4571-80c4-2d234e542aa9.png)
+
 
 - 이 위치보다는 src/main/generated에 Q클래스를 만들길 윈한다면 약간의 빌드 스크립트를 추가해줍니다.
 - 컴파일할 때 지정한 폴더(generated = 'src/main/generated')에 AnnotationProcessor가 생성한 파일을 넣고, gradle clean 실행 시 generated폴더도 같이 삭제합니다.
@@ -88,6 +89,7 @@ clean.doLast {
 }
 ```
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/10baa905-a038-4df1-87d0-b2694da826e1/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/10baa905-a038-4df1-87d0-b2694da826e1/Untitled.png)
+![Untitled (1)](https://user-images.githubusercontent.com/3108214/137776523-30f5292b-7b78-491a-ac27-f2d0c51511cf.png)
+
 
 이런 식으로 src/main/generated에 Q 클래스를 생성했습니다.
