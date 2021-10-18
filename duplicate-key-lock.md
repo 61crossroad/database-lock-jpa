@@ -53,7 +53,7 @@ timestamp 와 customData 는 테스트 당일 셋팅되어야함.
 
 [GET] [https://dev-api-orders.***.com](https://dev-api-orders.***.com/orders/payment/choice)/orders/payment/kcp/payResultTest/{paymentOrderId}
 
-KCP 결제창을 띄어 사람들이 결제를 시도했다고 가정하고 진행. paymentOrderId 는 위에 생성된 랜덤ID 값으로   호출 됨.
+KCP 결제창을 띄워 사람들이 결제를 시도했다고 가정하고 진행. paymentOrderId 는 위에 생성된 랜덤ID 값으로 호출 함.
 
 ## 2-3. 재고 복구 API
 
@@ -117,8 +117,7 @@ KCP 결제창을 띄웠다가 취소하는 경우 위 API를 통해서 미리 �
 
 ## 예전 백**님이 부하 테스트 했던 포멧 공유
 
-인수 테스트 할때 부하테스트 했었는데 참고 바랍니다.  
-비공개 문서  
+인수 테스트 할때 부하테스트 했었는데 참고 바랍니다. (사내 노션 문서)
 
 # 4. 부하 테스트 결과
 
