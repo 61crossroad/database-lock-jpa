@@ -2,13 +2,13 @@
 
 원인은 재고의 동시성(DB 락 같은 기술적 동시성이 아님)을 고려하지 못 한 설계 때문이었습니다.
 
-## 디코드 서비스의 상품-재고 구조
+## *** 서비스의 상품-재고 구조
 
 ![Untitled (2)](https://user-images.githubusercontent.com/3108214/137777530-9c44e76a-a778-447a-a3ef-eca491e3d6a3.png)
 
 그림 1
 
-디코드 서비스는 재고 1개가 product_stock 테이블의 1행으로 저장되어 있습니다. 즉, A 상품의 재고가 3개 있다면 product_stock에도 3행이 들어 있습니다. 이후 상품이 판매되어 재고가 소진되면 product_sold_stock에도 해당 재고 데이터를 생성합니다. 위 `그림 1`에서 보면 A의 재고 3개 중 1개가 판매되어서 product_sold_stock 테이블에 stock A-1이 생성되었습니다.
+*** 서비스는 재고 1개가 product_stock 테이블의 1행으로 저장되어 있습니다. 즉, A 상품의 재고가 3개 있다면 product_stock에도 3행이 들어 있습니다. 이후 상품이 판매되어 재고가 소진되면 product_sold_stock에도 해당 재고 데이터를 생성합니다. 위 `그림 1`에서 보면 A의 재고 3개 중 1개가 판매되어서 product_sold_stock 테이블에 stock A-1이 생성되었습니다.
 
 기존 시스템에서는 오직 결제가 성공한 이후에만 product_sold_stock 테이블에 데이터가 추가/삭제되었지만, 프로세스 변경 후에는 사용자가 주문페이지에 진입할 때부터 매우 동적으로 product_sold_stock 테이블의 데이터가 수정됩니다. **즉, product_sold_stock 테이블에 영향을 주는 서비스와 상황이 급격히 늘어난 것입니다.**
 
