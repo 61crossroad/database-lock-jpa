@@ -89,7 +89,7 @@ Controller ← DTO 캐시 객체 ← Service ← 엔티티 2차 캐시 객체 �
 N + 1이 발생한 근본적인 원인을 다시 살펴보면
 DB의 cover_collection 테이블에서 content_box_id, product_box_id, bottom_content_box_id 컬럼에 참조 무결성을 위배하는 -1이라는 값이 FK로 할당되었기 때문입니다.
 
-디코드 2.0의 DB 스키마는 전반적으로 FK 값이 없을 경우 -1로 설정하는 전략을 사용합니다. 
+*** 2.0의 DB 스키마는 전반적으로 FK 값이 없을 경우 -1로 설정하는 전략을 사용합니다. 
 예를 들어 brand 테이블은 id = -1인 row에 NOT MATCHED라는 값으로 null 참조를 처리하고 있습니다. 
 하지만 content_box와 product_box 테이블은 PK 컬럼이 unsigned로 선언이 되어 있어서 id = -1인 row를 생성할 수 없고, 결국 존재하지 않는 값을 참조하게 되었습니다.
 
@@ -117,7 +117,7 @@ drf-santamonica에서도 콘텐츠 박스와 상품 박스 입력시에 null로 
 
 ## 추후 방안
 
-- **[DAO 아키텍처]** 현재 디코드 2.0과 drf-santamonica의 ORM에서 N + 1 쿼리가 꽤 존재하는 것으로 파악했습니다. 
+- **[DAO 아키텍처]** 현재 *** 2.0과 drf-santamonica의 ORM에서 N + 1 쿼리가 꽤 존재하는 것으로 파악했습니다. 
 페치 전략과 쿼리를 수정하거나 ORM을 아예 제거해서 근본적으로 해결할 필요가 있습니다. 
 어떤 방식을 택해야 하느냐에 정답은 없겠지만, 개인적으로는 Jpa를 Best Practice로 리팩토링하는 쪽에 조금 더 마음이 갑니다. 
 ORM이라는 패러다임이 러닝 커브가 높고 까다로운 기술임에는 분명합니다. 
